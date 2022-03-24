@@ -9,11 +9,14 @@ class CSMT {
     zeroNode;
     entryMark;
 
-    constructor() {
+    _debug = false;
+
+    constructor(debug) {
         this.zeroNode = "0"
         this.entryMark = "1"
         this.nodes = new Map()
         this.root = this.zeroNode
+        this._debug = !!debug
     }
 
     print() {
@@ -23,7 +26,9 @@ class CSMT {
     insert(data) {
         this._validate(data)
         data.forEach(e => this.add(e.id, e.value))
-        this.print()
+        if (this._debug) {
+            this.print()
+        }
     }
 
     add(key, value) {
@@ -191,7 +196,6 @@ class CSMT {
     }
 
     _validate(array) {
-        console.log(array)
         if (!Array.isArray(array)) {
             throw new TypeError("Parameter must be an array")
         }

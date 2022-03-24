@@ -4,12 +4,15 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Jonathan Hepp",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "crypto-js": "^3.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
   }
 }
